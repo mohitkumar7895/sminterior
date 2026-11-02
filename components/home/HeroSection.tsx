@@ -82,7 +82,7 @@ export default function HeroSection({ banners = defaultBanners }: HeroSectionPro
   };
 
   return (
-    <div className="relative min-h-[90vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-charcoal text-cream">
+    <div className="relative min-h-[82vh] sm:min-h-[90vh] lg:min-h-[92vh] flex items-center justify-center overflow-hidden bg-charcoal text-cream">
       {/* Background Cinematic Imagery with AnimatePresence */}
       <AnimatePresence mode="wait">
         <motion.div
@@ -108,15 +108,15 @@ export default function HeroSection({ banners = defaultBanners }: HeroSectionPro
       </AnimatePresence>
 
       {/* Hero Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
-        <div className="max-w-3xl space-y-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20 lg:py-28 w-full">
+        <div className="max-w-3xl space-y-4 sm:space-y-6">
           {/* Badge */}
           <motion.div
             key={`badge-${currentIndex}`}
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full border border-gold/40 bg-walnut-dark/80 backdrop-blur-md text-gold text-xs font-semibold tracking-widest uppercase shadow-lg"
+            className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full border border-gold/40 bg-walnut-dark/80 backdrop-blur-md text-gold text-[10px] sm:text-xs font-semibold tracking-widest uppercase shadow-lg"
           >
             <Sparkles className="w-3.5 h-3.5 text-gold animate-pulse" />
             <span>{current.badge_text || 'Exclusive Haute Interiors'}</span>
@@ -128,7 +128,7 @@ export default function HeroSection({ banners = defaultBanners }: HeroSectionPro
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold leading-[1.15] tracking-tight text-cream"
+            className="font-serif text-2xl sm:text-5xl lg:text-6xl font-bold leading-tight sm:leading-[1.15] tracking-tight text-cream"
           >
             {current.title}
           </motion.h1>
@@ -139,7 +139,7 @@ export default function HeroSection({ banners = defaultBanners }: HeroSectionPro
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-sm sm:text-base lg:text-lg text-cream/80 max-w-2xl font-light leading-relaxed"
+            className="text-xs sm:text-base lg:text-lg text-cream/80 max-w-2xl font-light leading-relaxed"
           >
             {current.subtitle}
           </motion.p>
@@ -150,11 +150,11 @@ export default function HeroSection({ banners = defaultBanners }: HeroSectionPro
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-4"
+            className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4"
           >
             <Link
               href={current.cta_link || '/furniture'}
-              className="px-8 py-4 rounded-full bg-gold hover:bg-luxury-400 text-walnut-dark font-semibold text-xs uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-gold-glow flex items-center justify-center space-x-2 group"
+              className="w-full sm:w-auto px-7 py-3.5 sm:py-4 rounded-full bg-gold hover:bg-luxury-400 text-walnut-dark font-semibold text-xs uppercase tracking-widest transition-all duration-300 shadow-lg hover:shadow-gold-glow flex items-center justify-center space-x-2 group text-center"
             >
               <span>{current.cta_text || 'Explore Our Collection'}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -162,7 +162,7 @@ export default function HeroSection({ banners = defaultBanners }: HeroSectionPro
 
             <button
               onClick={() => openConsultationModal()}
-              className="px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 text-cream font-semibold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center space-x-2"
+              className="w-full sm:w-auto px-7 py-3.5 sm:py-4 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/25 text-cream font-semibold text-xs uppercase tracking-widest transition-all duration-300 flex items-center justify-center space-x-2 text-center"
             >
               <Sparkles className="w-3.5 h-3.5 text-gold" />
               <span>{current.secondary_cta_text || 'Book a Free Consultation'}</span>

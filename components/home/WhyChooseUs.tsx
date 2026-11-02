@@ -37,7 +37,7 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-cream-light border-y border-luxury-200/50">
+    <section className="py-10 sm:py-20 lg:py-28 bg-cream-light border-y border-luxury-200/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="The Sanjna Distinction"
@@ -45,18 +45,18 @@ export default function WhyChooseUs() {
           subtitle="Discover the pillars of uncompromising quality, craftsmanship, and transparent service that set our studio apart."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-8">
           {reasons.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className="p-8 rounded-3xl bg-cream border border-luxury-200/80 hover:border-gold/60 shadow-sm hover:shadow-luxury transition-all duration-300 space-y-4 group"
+                className="p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-cream border border-luxury-200/80 hover:border-gold/60 shadow-sm hover:shadow-luxury transition-all duration-300 space-y-3 sm:space-y-4 group"
               >
-                <div className="w-12 h-12 rounded-2xl bg-luxury-100 border border-luxury-300/50 flex items-center justify-center text-luxury-700 group-hover:bg-gold group-hover:text-walnut-dark group-hover:border-gold transition-colors">
-                  <Icon className="w-6 h-6" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-luxury-100 border border-luxury-300/50 flex items-center justify-center text-luxury-700 group-hover:bg-gold group-hover:text-walnut-dark group-hover:border-gold transition-colors">
+                  <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
-                <h3 className="font-serif text-lg font-bold text-walnut-dark group-hover:text-luxury-600 transition-colors">
+                <h3 className="font-serif text-base sm:text-lg font-bold text-walnut-dark group-hover:text-luxury-600 transition-colors">
                   {item.title}
                 </h3>
                 <p className="text-xs text-walnut/70 leading-relaxed font-light">

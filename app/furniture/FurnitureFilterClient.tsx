@@ -114,11 +114,11 @@ export default function FurnitureFilterClient({
         </div>
       </div>
 
-      {/* Category Filter Pills */}
-      <div className="flex items-center flex-wrap gap-2">
+      {/* Category Filter Pills: Scrollable on mobile, wrap on desktop */}
+      <div className="flex items-center sm:flex-wrap overflow-x-auto no-scrollbar gap-2 pb-2 px-1">
         <button
           onClick={() => handleCategoryChange('')}
-          className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+          className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-300 flex-shrink-0 ${
             !selectedCategory
               ? 'bg-walnut text-gold shadow-md'
               : 'bg-white text-walnut/70 hover:bg-cream hover:text-walnut border border-luxury-200'
@@ -131,7 +131,7 @@ export default function FurnitureFilterClient({
           <button
             key={cat.id}
             onClick={() => handleCategoryChange(cat.slug)}
-            className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+            className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-300 flex-shrink-0 ${
               selectedCategory === cat.slug
                 ? 'bg-walnut text-gold shadow-md'
                 : 'bg-white text-walnut/70 hover:bg-cream hover:text-walnut border border-luxury-200'
@@ -144,10 +144,10 @@ export default function FurnitureFilterClient({
         {(selectedCategory || search) && (
           <button
             onClick={clearAllFilters}
-            className="px-3 py-1.5 rounded-full text-xs text-red-600 hover:text-red-700 font-medium flex items-center space-x-1"
+            className="px-3 py-1.5 rounded-full text-xs text-red-600 hover:text-red-700 font-medium flex items-center space-x-1 whitespace-nowrap flex-shrink-0"
           >
             <X className="w-3.5 h-3.5" />
-            <span>Reset Filters</span>
+            <span>Reset</span>
           </button>
         )}
       </div>

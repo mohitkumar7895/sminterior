@@ -42,10 +42,10 @@ export default function InstagramGrid() {
     <section className="py-12 sm:py-16 bg-cream-light border-t border-luxury-200/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Instagram Profile Header with Avatar & Follow CTA */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 mb-8 bg-cream p-5 sm:p-6 rounded-3xl border border-luxury-200">
-          <div className="flex items-center space-x-4">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 mb-6 sm:mb-8 bg-cream p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-luxury-200">
+          <div className="flex items-center space-x-3 sm:space-x-4 w-full sm:w-auto">
             {/* Story Gradient Ring Around Studio Avatar */}
-            <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex-shrink-0 shadow-md">
+            <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-full p-[2.5px] bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex-shrink-0 shadow-md">
               <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white bg-walnut-dark">
                 <Image
                   src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80"
@@ -57,16 +57,16 @@ export default function InstagramGrid() {
             </div>
 
             <div>
-              <div className="flex items-center space-x-2">
-                <span className="font-serif text-base sm:text-lg font-bold text-walnut-dark">
+              <div className="flex items-center space-x-1.5 sm:space-x-2">
+                <span className="font-serif text-sm sm:text-lg font-bold text-walnut-dark">
                   smsanjna_interior
                 </span>
-                <span className="w-4 h-4 rounded-full bg-blue-500 text-white flex items-center justify-center text-[10px] font-bold">
+                <span className="w-3.5 h-3.5 sm:w-4 sm:h-4 rounded-full bg-blue-500 text-white flex items-center justify-center text-[9px] sm:text-[10px] font-bold">
                   ✓
                 </span>
               </div>
-              <p className="text-xs text-walnut/70">
-                S.M. Sanjna Interior Designer &amp; Furniture Atelier • <strong>28.4K</strong> followers
+              <p className="text-[11px] sm:text-xs text-walnut/70">
+                S.M. Sanjna Atelier • <strong>28.4K</strong> followers
               </p>
             </div>
           </div>
@@ -75,7 +75,7 @@ export default function InstagramGrid() {
             href="https://instagram.com"
             target="_blank"
             rel="noreferrer"
-            className="px-6 py-2.5 rounded-full bg-gold hover:bg-luxury-400 text-walnut-dark font-semibold text-xs uppercase tracking-wider transition-all duration-300 shadow-md flex items-center space-x-2"
+            className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-gold hover:bg-luxury-400 text-walnut-dark font-semibold text-xs uppercase tracking-wider transition-all duration-300 shadow-md flex items-center justify-center space-x-2 text-center"
           >
             <Instagram className="w-4 h-4" />
             <span>Follow on Instagram</span>

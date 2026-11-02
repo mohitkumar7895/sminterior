@@ -31,7 +31,7 @@ export default function ProcessSection() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-cream">
+    <section className="py-10 sm:py-20 lg:py-28 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="End-to-End Methodology"
@@ -39,21 +39,21 @@ export default function ProcessSection() {
           subtitle="From your initial dream concept to champagne handover, our comprehensive interior process guarantees predictable elegance with zero stress."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-6 relative">
           {steps.map((s, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-3xl bg-cream-light border border-luxury-200 hover:border-gold/60 shadow-sm hover:shadow-luxury transition-all duration-300 flex flex-col justify-between space-y-4 group"
+              className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-cream-light border border-luxury-200 hover:border-gold/60 shadow-sm hover:shadow-luxury transition-all duration-300 flex flex-col justify-between space-y-2 sm:space-y-4 group"
             >
               <div>
-                <span className="font-serif text-3xl font-extrabold text-gold block mb-2 group-hover:scale-105 transition-transform">
+                <span className="font-serif text-2xl sm:text-3xl font-extrabold text-gold block mb-1 sm:mb-2 group-hover:scale-105 transition-transform">
                   {s.step}
                 </span>
-                <h4 className="font-serif text-sm font-bold text-walnut-dark group-hover:text-luxury-600 transition-colors">
+                <h4 className="font-serif text-xs sm:text-sm font-bold text-walnut-dark group-hover:text-luxury-600 transition-colors">
                   {s.title}
                 </h4>
               </div>
-              <p className="text-xs text-walnut/70 leading-relaxed font-light">
+              <p className="text-[11px] sm:text-xs text-walnut/70 leading-relaxed font-light">
                 {s.desc}
               </p>
             </div>

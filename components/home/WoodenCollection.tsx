@@ -25,27 +25,27 @@ export default function WoodenCollection() {
               <span>Artisan Woodcraft Atelier</span>
             </div>
 
-            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-cream leading-tight">
+            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-cream leading-tight">
               The Soul of Solid Burma Teak &amp; American Walnut
             </h2>
 
-            <p className="text-sm sm:text-base text-cream/80 font-light leading-relaxed">
+            <p className="text-xs sm:text-base text-cream/80 font-light leading-relaxed">
               In a market saturated with hollow engineered boards and synthetic plastic veneers, our atelier stays stubbornly faithful to authentic, solid hardwood joinery. Each piece carries its own unique grain topography and warm tactile resonance.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 pt-2">
               {points.map((p, idx) => (
-                <div key={idx} className="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
+                <div key={idx} className="p-3 sm:p-4 rounded-2xl bg-white/5 border border-white/10 space-y-1">
                   <h4 className="font-serif text-xs font-bold text-gold uppercase tracking-wider">{p.title}</h4>
                   <p className="text-[11px] text-cream/70 leading-normal">{p.desc}</p>
                 </div>
               ))}
             </div>
 
-            <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+            <div className="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 href="/furniture/wooden-furniture"
-                className="px-8 py-3.5 rounded-full bg-gold hover:bg-luxury-400 text-walnut-dark font-semibold text-xs uppercase tracking-widest transition-all shadow-lg hover:shadow-gold-glow flex items-center space-x-2"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-gold hover:bg-luxury-400 text-walnut-dark font-semibold text-xs uppercase tracking-widest transition-all shadow-lg hover:shadow-gold-glow flex items-center justify-center space-x-2 text-center"
               >
                 <span>Explore Wooden Furniture</span>
                 <ArrowRight className="w-4 h-4" />
@@ -53,7 +53,7 @@ export default function WoodenCollection() {
 
               <Link
                 href="/furniture/custom-furniture"
-                className="text-xs uppercase tracking-widest font-semibold text-cream hover:text-gold transition-colors"
+                className="text-xs uppercase tracking-widest font-semibold text-cream hover:text-gold transition-colors text-center py-2 sm:py-0"
               >
                 Commission Bespoke Woodwork
               </Link>

@@ -51,11 +51,10 @@ export default async function ProjectsPage({ searchParams }: Props) {
                 <a
                   key={cat}
                   href={cat === 'All' ? '/projects' : `/projects?category=${encodeURIComponent(cat)}`}
-                  className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
-                    isActive
+                  className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${isActive
                       ? 'bg-gold text-walnut-dark shadow-md'
                       : 'bg-white text-walnut/70 hover:bg-cream hover:text-walnut border border-luxury-200'
-                  }`}
+                    }`}
                 >
                   {cat}
                 </a>

@@ -14,6 +14,8 @@ export async function generateMetadata(): Promise<Metadata> {
   );
 }
 
+export const revalidate = 60;
+
 export default async function KitchenAccessoriesPage() {
   const { products } = await getProducts({
     category: 'kitchen-hardware-parts',

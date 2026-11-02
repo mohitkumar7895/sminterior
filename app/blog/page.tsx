@@ -16,6 +16,8 @@ export async function generateMetadata(): Promise<Metadata> {
   );
 }
 
+export const revalidate = 60;
+
 export default async function BlogPage() {
   const blogs = await getBlogs(20);
 

@@ -124,11 +124,17 @@ export async function getContactDetails(): Promise<ContactDetails | null> {
 }
 
 export async function getSettings(): Promise<Record<string, string>> {
-  const rows = await query<{ setting_key: string; setting_value: string }>('SELECT setting_key, setting_value FROM settings');
-  const settings: Record<string, string> = {};
-  for (const r of rows) {
-    settings[r.setting_key] = r.setting_value;
+  try {
+    const rows = await query<{ setting_key: string; setting_value: string }>('SELECT setting_key, setting_value FROM settings');
+    const settings: Record<string, string> = {};
+    if (Array.isArray(rows)) {
+      for (const r of rows) {
+        settings[r.setting_key] = r.setting_value;
+      }
+    }
+    return settings;
+  } catch {
+    return {};
   }
-  return settings;
 }
 

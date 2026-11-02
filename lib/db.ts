@@ -13,11 +13,13 @@ const poolOptions: PoolOptions = {
   password: process.env.DB_PASSWORD || '',
   database: process.env.DB_NAME || 'svinterior',
   waitForConnections: true,
-  connectionLimit: 15,
+  connectionLimit: 10,
   queueLimit: 0,
   enableKeepAlive: true,
   keepAliveInitialDelay: 10000,
   namedPlaceholders: false,
+  connectTimeout: 5000,
+  ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : undefined,
 };
 
 let pool: Pool;
@@ -34,13 +36,38 @@ if (process.env.NODE_ENV === 'production') {
 export { pool };
 
 /**
+ * Check if an error is a database connection/network failure
+ */
+function isConnectionFailure(error: any): boolean {
+  if (!error) return false;
+  const code = error.code || '';
+  const message = error.message || '';
+  return (
+    code === 'ECONNREFUSED' ||
+    code === 'ENOTFOUND' ||
+    code === 'ETIMEDOUT' ||
+    code === 'EACCES' ||
+    code === 'EHOSTUNREACH' ||
+    code === 'PROTOCOL_CONNECTION_LOST' ||
+    code === 'ER_ACCESS_DENIED_ERROR' ||
+    message.includes('ECONNREFUSED') ||
+    message.includes('connect EACCES')
+  );
+}
+
+/**
  * Execute a SELECT query and return typed array of rows
+ * If database is unreachable (e.g. during Vercel static build), returns empty array instead of crashing
  */
 export async function query<T = any>(sql: string, params: any[] = []): Promise<T[]> {
   try {
     const [rows] = await pool.query<RowDataPacket[] & T[]>(sql, params);
     return rows as T[];
-  } catch (error) {
+  } catch (error: any) {
+    if (isConnectionFailure(error)) {
+      console.warn(`[MySQL Server Notice] Database offline or unreachable (${error.code || error.message}) for query: ${sql.trim().slice(0, 60)}... Falling back to safe empty dataset.`);
+      return [] as T[];
+    }
     console.error('MySQL query error:', { sql, params, error });
     throw error;
   }
@@ -50,9 +77,16 @@ export async function query<T = any>(sql: string, params: any[] = []): Promise<T
  * Execute a query expecting a single row or null
  */
 export async function queryOne<T = any>(sql: string, params: any[] = []): Promise<T | null> {
-  const rows = await query<T>(sql, params);
-  if (!rows || rows.length === 0) return null;
-  return rows[0];
+  try {
+    const rows = await query<T>(sql, params);
+    if (!rows || rows.length === 0) return null;
+    return rows[0];
+  } catch (error: any) {
+    if (isConnectionFailure(error)) {
+      return null;
+    }
+    throw error;
+  }
 }
 
 /**

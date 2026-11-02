@@ -29,7 +29,12 @@ export async function constructMetadata(
   fallbackTitle: string,
   fallbackDescription: string
 ): Promise<Metadata> {
-  const seo = await getSeoMetadata(route);
+  let seo: SeoMetadata | null = null;
+  try {
+    seo = await getSeoMetadata(route);
+  } catch {
+    seo = null;
+  }
 
   const title = seo?.meta_title || fallbackTitle;
   const description = seo?.meta_description || fallbackDescription;

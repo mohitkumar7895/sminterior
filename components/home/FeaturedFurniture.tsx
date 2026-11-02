@@ -46,13 +46,13 @@ export default function FeaturedFurniture({ products }: FeaturedFurnitureProps) 
           </Link>
         </div>
 
-        {/* Filter Pills */}
-        <div className="flex items-center flex-wrap gap-2 mb-6">
+        {/* Filter Pills: Scrollable on mobile */}
+        <div className="flex items-center overflow-x-auto no-scrollbar gap-2 mb-6 pb-2 px-1">
           {categories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+              className={`px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-300 flex-shrink-0 ${
                 selectedCategory === cat
                   ? 'bg-walnut text-gold shadow-md'
                   : 'bg-white/80 text-walnut/70 hover:bg-white hover:text-walnut border border-luxury-200'
@@ -64,24 +64,24 @@ export default function FeaturedFurniture({ products }: FeaturedFurnitureProps) 
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-6">
           {filtered.slice(0, 8).map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
         {/* Bottom Banner Pill */}
-        <div className="mt-8 p-6 rounded-3xl bg-walnut-dark text-cream border border-luxury-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="mt-8 p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-walnut-dark text-cream border border-luxury-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center space-x-3 text-center sm:text-left">
-            <Sparkles className="w-6 h-6 text-gold flex-shrink-0" />
+            <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-gold flex-shrink-0" />
             <div>
-              <h4 className="font-serif text-base font-bold text-cream">Need Bespoke Furniture Dimensions or Finishes?</h4>
-              <p className="text-xs text-cream/70">We custom fabricate any sofa, dining table, or wardrobe to your exact floorplan specs.</p>
+              <h4 className="font-serif text-sm sm:text-base font-bold text-cream">Need Bespoke Furniture Dimensions or Finishes?</h4>
+              <p className="text-[11px] sm:text-xs text-cream/70 mt-0.5">We custom fabricate any sofa, dining table, or wardrobe to your exact floorplan specs.</p>
             </div>
           </div>
           <Link
             href="/furniture/custom-furniture"
-            className="px-6 py-3 rounded-full bg-gold text-walnut-dark font-semibold text-xs uppercase tracking-wider hover:bg-luxury-400 transition-colors flex-shrink-0 shadow-md"
+            className="w-full sm:w-auto px-6 py-3 rounded-full bg-gold text-walnut-dark font-semibold text-xs uppercase tracking-wider hover:bg-luxury-400 transition-colors flex-shrink-0 shadow-md text-center"
           >
             Request Custom Piece
           </Link>

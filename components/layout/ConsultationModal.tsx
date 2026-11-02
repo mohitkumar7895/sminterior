@@ -71,19 +71,19 @@ export default function ConsultationModal() {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
-      <div className="w-full max-w-lg bg-walnut-dark border border-luxury-500/30 rounded-3xl shadow-2xl overflow-hidden text-cream relative">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200">
+      <div className="w-full max-w-lg bg-walnut-dark border border-luxury-500/30 rounded-2xl sm:rounded-3xl shadow-2xl max-h-[92vh] flex flex-col overflow-hidden text-cream relative">
         {/* Header */}
-        <div className="p-6 bg-gradient-to-r from-walnut-dark to-charcoal border-b border-luxury-500/20 flex items-start justify-between">
+        <div className="p-4 sm:p-6 bg-gradient-to-r from-walnut-dark to-charcoal border-b border-luxury-500/20 flex items-start justify-between flex-shrink-0">
           <div>
             <div className="flex items-center space-x-2 text-gold text-xs font-semibold uppercase tracking-widest mb-1">
               <Sparkles className="w-3.5 h-3.5" />
               <span>Complimentary 3D Consultation</span>
             </div>
-            <h3 className="font-serif text-xl font-bold text-cream">
+            <h3 className="font-serif text-lg sm:text-xl font-bold text-cream">
               Book Your Private Design Session
             </h3>
-            <p className="text-xs text-cream/70 mt-1">
+            <p className="text-[11px] sm:text-xs text-cream/70 mt-0.5 sm:mt-1">
               Meet our senior spatial architects for a 1-on-1 lifestyle mapping session.
             </p>
           </div>
@@ -92,14 +92,14 @@ export default function ConsultationModal() {
               setSuccess(false);
               closeConsultationModal();
             }}
-            className="p-1.5 rounded-full text-cream/60 hover:text-gold hover:bg-white/5 transition-colors"
+            className="p-1.5 rounded-full text-cream/60 hover:text-gold hover:bg-white/5 transition-colors flex-shrink-0 ml-2"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
 
         {/* Form Body or Success State */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6 overflow-y-auto flex-1">
           {success ? (
             <div className="text-center py-8 space-y-4">
               <div className="w-16 h-16 rounded-full bg-gold/10 border border-gold/40 flex items-center justify-center mx-auto text-gold animate-bounce">

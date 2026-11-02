@@ -31,14 +31,14 @@ export default function TestimonialsSection({ testimonials }: TestimonialsSectio
       {/* Single Continuous Scrolling Line (Marquee) */}
       <div className="relative w-full overflow-hidden">
         {/* Left and Right Fade Overlays */}
-        <div className="absolute top-0 bottom-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-walnut-dark to-transparent z-10 pointer-events-none" />
-        <div className="absolute top-0 bottom-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-walnut-dark to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 left-0 w-8 sm:w-32 bg-gradient-to-r from-walnut-dark to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 bottom-0 right-0 w-8 sm:w-32 bg-gradient-to-l from-walnut-dark to-transparent z-10 pointer-events-none" />
 
-        <div className="flex space-x-6 w-max animate-marquee hover:[animation-play-state:paused] py-4">
+        <div className="flex space-x-4 sm:space-x-6 w-max animate-marquee hover:[animation-play-state:paused] active:[animation-play-state:paused] py-4">
           {items.map((t, idx) => (
             <div
               key={`${t.id}-${idx}`}
-              className="w-[320px] sm:w-[400px] flex-shrink-0 p-6 sm:p-7 rounded-3xl bg-white/5 border border-white/10 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between space-y-4 shadow-xl group hover:bg-white/[0.08]"
+              className="w-[280px] sm:w-[400px] flex-shrink-0 p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-white/5 border border-white/10 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between space-y-4 shadow-xl group hover:bg-white/[0.08]"
             >
               <div className="space-y-3">
                 {/* Rating stars and quote icon */}

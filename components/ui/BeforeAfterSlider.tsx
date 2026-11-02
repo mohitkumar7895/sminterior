@@ -46,26 +46,26 @@ export default function BeforeAfterSlider({
   };
 
   return (
-    <div className="bg-walnut-dark border border-luxury-500/30 rounded-3xl overflow-hidden p-6 sm:p-8 text-cream shadow-2xl">
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
+    <div className="bg-walnut-dark border border-luxury-500/30 rounded-2xl sm:rounded-3xl overflow-hidden p-4 sm:p-8 text-cream shadow-2xl">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4 sm:mb-6">
         <div>
           <span className="text-[10px] uppercase tracking-widest text-gold font-semibold flex items-center space-x-1.5 mb-1">
             <Sparkles className="w-3 h-3" />
             <span>{category}</span>
           </span>
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold">{title}</h3>
+          <h3 className="font-serif text-xl sm:text-3xl font-bold">{title}</h3>
           {description && (
             <p className="text-xs text-cream/70 max-w-xl mt-1 leading-relaxed">{description}</p>
           )}
         </div>
-        <div className="flex items-center space-x-3 text-xs text-cream/70">
+        <div className="flex items-center space-x-2 sm:space-x-3 text-[11px] sm:text-xs text-cream/70">
           <span className="flex items-center space-x-1">
-            <span className="w-2.5 h-2.5 rounded-full bg-cream/40" />
+            <span className="w-2 h-2 rounded-full bg-cream/40" />
             <span>Before: Shell Stage</span>
           </span>
           <span className="text-gold">↔</span>
           <span className="flex items-center space-x-1">
-            <span className="w-2.5 h-2.5 rounded-full bg-gold" />
+            <span className="w-2 h-2 rounded-full bg-gold" />
             <span>After: Handover</span>
           </span>
         </div>
@@ -80,7 +80,7 @@ export default function BeforeAfterSlider({
         onMouseMove={handleMouseMove}
         onTouchStart={(e) => handleMove(e.touches[0].clientX)}
         onTouchMove={handleTouchMove}
-        className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden cursor-ew-resize select-none border border-white/10"
+        className="relative aspect-[4/3] sm:aspect-[16/9] w-full rounded-xl sm:rounded-2xl overflow-hidden cursor-ew-resize select-none border border-white/10 touch-none"
       >
         {/* AFTER Image (Full Background) */}
         <Image

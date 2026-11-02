@@ -50,7 +50,7 @@ export default function AboutPreview() {
             className="lg:col-span-5 relative"
           >
             {/* Primary Main Image */}
-            <div className="relative aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-2xl border border-luxury-200 bg-walnut-dark group">
+            <div className="relative aspect-[4/3] sm:aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-2xl border border-luxury-200 bg-walnut-dark group">
               <Image
                 src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1000&q=80"
                 alt="S.M. Sanjna Atelier Living Room Architecture"
@@ -67,7 +67,7 @@ export default function AboutPreview() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="absolute -bottom-6 -right-2 sm:-right-6 w-64 sm:w-72 bg-walnut-dark/95 backdrop-blur-xl p-5 rounded-2xl border border-gold/30 shadow-2xl text-cream"
+              className="mt-4 sm:mt-0 sm:absolute sm:-bottom-6 sm:-right-6 w-full sm:w-72 bg-walnut-dark/95 backdrop-blur-xl p-4 sm:p-5 rounded-2xl border border-gold/30 shadow-2xl text-cream"
             >
               <div className="flex items-center justify-between mb-2">
                 <span className="text-[10px] text-gold font-bold uppercase tracking-widest flex items-center space-x-1.5">
@@ -96,10 +96,10 @@ export default function AboutPreview() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="absolute -top-3 -left-3 sm:-left-5 bg-gold text-walnut-dark px-4 py-2.5 rounded-2xl shadow-xl flex items-center space-x-2.5 border border-white/30"
+              className="absolute top-3 left-3 sm:-top-3 sm:-left-5 bg-gold text-walnut-dark px-3 sm:px-4 py-2 sm:py-2.5 rounded-2xl shadow-xl flex items-center space-x-2 sm:space-x-2.5 border border-white/30"
             >
-              <span className="font-serif text-2xl font-black">15+</span>
-              <span className="text-[9px] font-bold uppercase tracking-wider leading-tight">
+              <span className="font-serif text-xl sm:text-2xl font-black">15+</span>
+              <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider leading-tight">
                 Years of Fine<br />Craftsmanship
               </span>
             </motion.div>
@@ -156,10 +156,10 @@ export default function AboutPreview() {
             </div>
 
             {/* CTA Action Buttons */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
               <Link
                 href="/about"
-                className="px-7 py-3 rounded-full bg-walnut text-cream hover:bg-gold hover:text-walnut-dark font-semibold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-gold-glow flex items-center space-x-2"
+                className="w-full sm:w-auto px-7 py-3 rounded-full bg-walnut text-cream hover:bg-gold hover:text-walnut-dark font-semibold text-xs uppercase tracking-wider transition-all duration-300 shadow-md hover:shadow-gold-glow flex items-center justify-center space-x-2 text-center"
               >
                 <span>Discover Our Heritage</span>
                 <ArrowRight className="w-4 h-4" />
@@ -167,7 +167,7 @@ export default function AboutPreview() {
 
               <Link
                 href="/projects"
-                className="px-6 py-3 rounded-full border border-walnut/30 text-walnut-dark hover:border-gold hover:text-gold font-semibold text-xs uppercase tracking-wider transition-all flex items-center space-x-1.5"
+                className="w-full sm:w-auto px-6 py-3 rounded-full border border-walnut/30 text-walnut-dark hover:border-gold hover:text-gold font-semibold text-xs uppercase tracking-wider transition-all flex items-center justify-center space-x-1.5 text-center"
               >
                 <span>View Portfolio</span>
                 <ArrowRight className="w-3.5 h-3.5" />

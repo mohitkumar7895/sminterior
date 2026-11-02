@@ -312,72 +312,72 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[65px] bg-walnut-dark/98 backdrop-blur-2xl border-b border-luxury-500/20 max-h-[85vh] overflow-y-auto px-6 py-6 space-y-4 shadow-2xl animate-in slide-in-from-top-4 duration-300">
-          <div className="flex flex-col space-y-3 pb-4 border-b border-white/10">
-            <Link href="/" className="text-base font-serif text-cream hover:text-gold py-1">
+        <div className="lg:hidden absolute inset-x-0 top-full bg-walnut-dark/98 backdrop-blur-2xl border-b border-luxury-500/20 max-h-[calc(100vh-80px)] overflow-y-auto px-5 py-5 space-y-4 shadow-2xl animate-in slide-in-from-top-2 duration-200 pb-28">
+          <div className="flex flex-col space-y-2 pb-4 border-b border-white/10">
+            <Link onClick={() => setMobileMenuOpen(false)} href="/" className="text-sm font-serif text-cream hover:text-gold py-1">
               Home
             </Link>
-            <Link href="/about" className="text-base font-serif text-cream hover:text-gold py-1">
+            <Link onClick={() => setMobileMenuOpen(false)} href="/about" className="text-sm font-serif text-cream hover:text-gold py-1">
               About Us
             </Link>
-            <Link href="/services" className="text-base font-serif text-cream hover:text-gold py-1">
+            <Link onClick={() => setMobileMenuOpen(false)} href="/services" className="text-sm font-serif text-cream hover:text-gold py-1">
               All 14 Interior Services
             </Link>
-            <div className="pl-4 space-y-1.5 border-l border-gold/30">
-              <Link href="/services/modular-kitchen" className="block text-xs text-cream/70 hover:text-gold">
+            <div className="pl-3.5 space-y-1.5 border-l border-gold/30">
+              <Link onClick={() => setMobileMenuOpen(false)} href="/services/modular-kitchen" className="block text-xs text-cream/70 hover:text-gold py-0.5">
                 • Modular Kitchen Design
               </Link>
-              <Link href="/services/luxury-interior-design" className="block text-xs text-cream/70 hover:text-gold">
+              <Link onClick={() => setMobileMenuOpen(false)} href="/services/luxury-interior-design" className="block text-xs text-cream/70 hover:text-gold py-0.5">
                 • Luxury Villa Design
               </Link>
-              <Link href="/services/bedroom-interior" className="block text-xs text-cream/70 hover:text-gold">
+              <Link onClick={() => setMobileMenuOpen(false)} href="/services/bedroom-interior" className="block text-xs text-cream/70 hover:text-gold py-0.5">
                 • Bedroom Interiors
               </Link>
-              <Link href="/services/living-room-interior" className="block text-xs text-cream/70 hover:text-gold">
+              <Link onClick={() => setMobileMenuOpen(false)} href="/services/living-room-interior" className="block text-xs text-cream/70 hover:text-gold py-0.5">
                 • Living Room Design
               </Link>
-              <Link href="/services/office-interior" className="block text-xs text-cream/70 hover:text-gold">
-                • Office & Corporate Design
+              <Link onClick={() => setMobileMenuOpen(false)} href="/services/office-interior" className="block text-xs text-cream/70 hover:text-gold py-0.5">
+                • Office &amp; Corporate Design
               </Link>
             </div>
-            <Link href="/furniture" className="text-base font-serif text-cream hover:text-gold py-1">
+            <Link onClick={() => setMobileMenuOpen(false)} href="/furniture" className="text-sm font-serif text-cream hover:text-gold py-1">
               Furniture Collection
             </Link>
-            <div className="pl-4 space-y-1.5 border-l border-gold/30">
-              <Link href="/furniture/wooden-furniture" className="block text-xs text-cream/70 hover:text-gold">
+            <div className="pl-3.5 space-y-1.5 border-l border-gold/30">
+              <Link onClick={() => setMobileMenuOpen(false)} href="/furniture/wooden-furniture" className="block text-xs text-cream/70 hover:text-gold py-0.5">
                 • Solid Wooden Furniture
               </Link>
-              <Link href="/furniture/kitchen-accessories" className="block text-xs text-cream/70 hover:text-gold">
-                • Kitchen Accessories & Parts
+              <Link onClick={() => setMobileMenuOpen(false)} href="/furniture/kitchen-accessories" className="block text-xs text-cream/70 hover:text-gold py-0.5">
+                • Kitchen Accessories &amp; Parts
               </Link>
-              <Link href="/furniture/wardrobes" className="block text-xs text-cream/70 hover:text-gold">
-                • Luxury Wardrobes & Closets
+              <Link onClick={() => setMobileMenuOpen(false)} href="/furniture/wardrobes" className="block text-xs text-cream/70 hover:text-gold py-0.5">
+                • Luxury Wardrobes &amp; Closets
               </Link>
-              <Link href="/furniture/custom-furniture" className="block text-xs text-cream/70 hover:text-gold">
+              <Link onClick={() => setMobileMenuOpen(false)} href="/furniture/custom-furniture" className="block text-xs text-cream/70 hover:text-gold py-0.5">
                 • Bespoke Custom Furniture
               </Link>
             </div>
-            <Link href="/projects" className="text-base font-serif text-cream hover:text-gold py-1">
-              Projects & Portfolio
+            <Link onClick={() => setMobileMenuOpen(false)} href="/projects" className="text-sm font-serif text-cream hover:text-gold py-1">
+              Projects &amp; Portfolio
             </Link>
-            <Link href="/gallery" className="text-base font-serif text-cream hover:text-gold py-1">
+            <Link onClick={() => setMobileMenuOpen(false)} href="/gallery" className="text-sm font-serif text-cream hover:text-gold py-1">
               Gallery
             </Link>
-            <Link href="/contact" className="text-base font-serif text-cream hover:text-gold py-1">
+            <Link onClick={() => setMobileMenuOpen(false)} href="/contact" className="text-sm font-serif text-cream hover:text-gold py-1">
               Contact Studio
             </Link>
-            <Link href="/get-quote" className="text-base font-serif text-gold font-medium py-1">
+            <Link onClick={() => setMobileMenuOpen(false)} href="/get-quote" className="text-sm font-serif text-gold font-medium py-1">
               Request a Free Quote
             </Link>
           </div>
 
-          <div className="pt-2 flex flex-col space-y-3">
+          <div className="pt-2 flex flex-col space-y-2.5">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 openConsultationModal();
               }}
-              className="w-full py-3 rounded-xl bg-gold text-walnut-dark font-medium text-sm tracking-wide uppercase flex items-center justify-center space-x-2"
+              className="w-full py-3 rounded-xl bg-gold text-walnut-dark font-medium text-xs tracking-wider uppercase flex items-center justify-center space-x-2 shadow-md"
             >
               <Sparkles className="w-4 h-4" />
               <span>Book Free Consultation</span>

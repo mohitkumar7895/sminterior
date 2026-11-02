@@ -53,13 +53,13 @@ export default function ServicesGrid({ services }: ServicesGridProps) {
           subtitle="From concept drawings and 3D photorealistic visualization to factory-precision manufacturing and move-in ready handover, explore our comprehensive suite of 14 architectural interior services."
         />
 
-        {/* Category Tabs */}
-        <div className="flex items-center justify-center flex-wrap gap-2 mb-6">
+        {/* Category Tabs: Scrollable on mobile, centered wrap on desktop */}
+        <div className="flex items-center sm:justify-center overflow-x-auto no-scrollbar gap-2 mb-6 pb-2 px-1">
           {tabs.map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+              className={`px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider whitespace-nowrap transition-all duration-300 flex-shrink-0 ${
                 activeTab === tab
                   ? 'bg-gold text-walnut-dark shadow-md'
                   : 'bg-white/70 text-walnut/70 hover:bg-white hover:text-walnut border border-luxury-200/70'
@@ -71,7 +71,7 @@ export default function ServicesGrid({ services }: ServicesGridProps) {
         </div>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
           {filtered.slice(0, 6).map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}

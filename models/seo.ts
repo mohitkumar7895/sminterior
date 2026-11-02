@@ -84,7 +84,7 @@ export function generateLocalBusinessSchema() {
     image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
     '@id': 'https://smsanjna.com',
     url: 'https://smsanjna.com',
-    telephone: '+91 98100 87654',
+    telephone: '+91 90454 49196',
     priceRange: '₹₹₹₹',
     address: {
       '@type': 'PostalAddress',

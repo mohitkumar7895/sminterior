@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle2, Sparkles, MessageCircle } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
+import { openWhatsAppLead, getWhatsAppUrl, DISPLAY_PHONE } from '@/lib/whatsapp';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -23,6 +24,15 @@ export default function ContactPage() {
     setSubmitting(true);
     setErrorMsg('');
 
+    // Pre-format WhatsApp lead text
+    const waMsg = `🏛️ *New Contact Inquiry - S.M. Sanjna Interior Studio*\n\n` +
+      `*Client Name:* ${formData.name}\n` +
+      `*Phone / WhatsApp:* ${formData.phone}\n` +
+      `*Email:* ${formData.email}\n` +
+      `*Service Interested:* ${formData.service_interested}\n` +
+      (formData.subject ? `*Subject:* ${formData.subject}\n` : '') +
+      `*Message / Requirements:*\n${formData.message}`;
+
     try {
       const res = await fetch('/api/inquiries', {
         method: 'POST',
@@ -32,6 +42,8 @@ export default function ContactPage() {
 
       if (res.ok) {
         setSubmitted(true);
+        // Automatically route lead details to WhatsApp on 9045449196
+        openWhatsAppLead(waMsg);
       } else {
         const data = await res.json();
         setErrorMsg(data.message || 'Failed to submit inquiry.');
@@ -89,8 +101,8 @@ export default function ContactPage() {
                     <Phone className="w-5 h-5 text-gold flex-shrink-0" />
                     <div>
                       <strong className="text-cream block">Concierge Desk:</strong>
-                      <a href="tel:+919810087654" className="hover:text-gold transition-colors">
-                        +91 98100 87654 / +91 11 4567 8900
+                      <a href="tel:+919045449196" className="hover:text-gold transition-colors">
+                        +91 90454 49196 / +91 11 4567 8900
                       </a>
                     </div>
                   </div>
@@ -116,13 +128,13 @@ export default function ContactPage() {
 
                 <div className="pt-4 border-t border-white/10 flex items-center space-x-3">
                   <a
-                    href="https://wa.me/919810087654?text=Hello%20S.M.%20Sanjna%20Interior%20Designer"
+                    href="https://wa.me/919045449196?text=Hello%20S.M.%20Sanjna%20Interior%20Designer"
                     target="_blank"
                     rel="noreferrer"
                     className="flex-1 py-3 rounded-full bg-gold text-walnut-dark font-semibold text-xs uppercase tracking-wider hover:bg-luxury-400 transition-colors flex items-center justify-center space-x-2 shadow-md"
                   >
                     <MessageCircle className="w-4 h-4" />
-                    <span>WhatsApp Concierge</span>
+                    <span>WhatsApp Concierge (+91 90454 49196)</span>
                   </a>
                 </div>
               </div>
@@ -149,14 +161,35 @@ export default function ContactPage() {
                   </div>
                   <h4 className="font-serif text-2xl font-bold text-walnut-dark">Inquiry Dispatched!</h4>
                   <p className="text-xs text-walnut/70 max-w-sm mx-auto leading-relaxed">
-                    Thank you, <strong className="text-walnut-dark">{formData.name}</strong>. Our senior spatial architect will review your project brief and get in touch shortly.
+                    Thank you, <strong className="text-walnut-dark">{formData.name}</strong>. Our lead spatial architect will review your project brief and get in touch with you shortly.
                   </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-4 px-6 py-2.5 rounded-full bg-gold text-walnut-dark text-xs font-semibold uppercase tracking-wider hover:bg-luxury-400 transition-colors"
-                  >
-                    Send Another Message
-                  </button>
+
+                  <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+                    <a
+                      href={getWhatsAppUrl(
+                        `🏛️ *Contact Inquiry Details*\n\n` +
+                        `*Name:* ${formData.name}\n` +
+                        `*Phone:* ${formData.phone}\n` +
+                        `*Email:* ${formData.email}\n` +
+                        `*Service:* ${formData.service_interested}\n` +
+                        (formData.subject ? `*Subject:* ${formData.subject}\n` : '') +
+                        `*Requirements:* ${formData.message}`
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center space-x-2 px-6 py-3 rounded-full bg-emerald-700 text-white font-semibold text-xs tracking-wider uppercase hover:bg-emerald-800 transition-all shadow-md"
+                    >
+                      <MessageCircle className="w-4 h-4 fill-white" />
+                      <span>Chat on WhatsApp ({DISPLAY_PHONE})</span>
+                    </a>
+
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="px-6 py-3 rounded-full bg-gold text-walnut-dark text-xs font-semibold uppercase tracking-wider hover:bg-luxury-400 transition-colors"
+                    >
+                      Send Another Message
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
@@ -190,7 +223,7 @@ export default function ContactPage() {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 90454 49196"
                         className="w-full bg-white border border-luxury-200 rounded-xl px-3.5 py-2.5 text-xs text-walnut-dark focus:outline-none focus:border-gold transition-colors"
                       />
                     </div>

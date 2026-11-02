@@ -532,7 +532,7 @@ CREATE TABLE IF NOT EXISTS settings (
 CREATE TABLE IF NOT EXISTS contact_details (
   id INT AUTO_INCREMENT PRIMARY KEY,
   company_name VARCHAR(150) NOT NULL DEFAULT 'S.M. Sanjna Interior Designer',
-  phone_primary VARCHAR(50) DEFAULT '+91 98765 43210',
+  phone_primary VARCHAR(50) DEFAULT '+91 90454 49196',
   phone_secondary VARCHAR(50) DEFAULT '+91 98765 43211',
   email_primary VARCHAR(150) DEFAULT 'info@smsanjna.com',
   email_support VARCHAR(150) DEFAULT 'support@smsanjna.com',

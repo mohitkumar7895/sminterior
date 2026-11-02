@@ -104,7 +104,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                 <span>Request a Free Quote</span>
               </Link>
               <a
-                href="tel:+919810087654"
+                href="tel:+919045449196"
                 className="px-6 py-3.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-cream font-semibold text-xs uppercase tracking-widest transition-all text-center"
               >
                 Speak with Lead Architect

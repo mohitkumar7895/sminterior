@@ -45,8 +45,8 @@ export default function ContactCtaBanner() {
         <div className="pt-6 flex items-center justify-center space-x-2 text-xs text-cream/70">
           <Phone className="w-3.5 h-3.5 text-gold" />
           <span>Prefer a phone call? Dial our studio concierge directly: </span>
-          <a href="tel:+919810087654" className="text-gold font-bold hover:underline">
-            +91 98100 87654
+          <a href="tel:+919045449196" className="text-gold font-bold hover:underline">
+            +91 90454 49196
           </a>
         </div>
       </div>

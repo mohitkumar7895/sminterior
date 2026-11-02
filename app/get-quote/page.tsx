@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Calculator, Sparkles, CheckCircle2, ShieldCheck, Clock, Send } from 'lucide-react';
+import { Calculator, Sparkles, CheckCircle2, ShieldCheck, Clock, Send, MessageCircle } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
+import { openWhatsAppLead, WHATSAPP_PHONE, DISPLAY_PHONE } from '@/lib/whatsapp';
 
 export default function GetQuotePage() {
   const [formData, setFormData] = useState({
@@ -19,6 +20,7 @@ export default function GetQuotePage() {
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const [lastWaText, setLastWaText] = useState('');
 
   const handleScopeToggle = (item: string) => {
     setFormData((prev) => {
@@ -44,6 +46,23 @@ export default function GetQuotePage() {
     setSubmitting(true);
     setErrorMsg('');
 
+    const waText = `📐 *New Itemized Quotation Request*
+
+👤 *Name:* ${formData.name}
+📞 *Phone / WhatsApp:* ${formData.phone}
+✉️ *Email:* ${formData.email || 'N/A'}
+🏗️ *Project Type:* ${formData.project_type}
+📏 *Carpet Area:* ${formData.area_sqft} sq.ft.
+🔨 *Scope:* ${formData.scope.join(', ')}
+💰 *Budget Range:* ${formData.budget_range}
+🏷️ *Estimated Benchmark:* ₹${estimate.min.toLocaleString('en-IN')} - ₹${estimate.max.toLocaleString('en-IN')}
+📝 *Details / Requirements:* ${formData.requirements || 'None'}
+
+---
+*Studio:* S.M. Sanjna Interior Designer`;
+
+    setLastWaText(waText);
+
     try {
       const res = await fetch('/api/quotations', {
         method: 'POST',
@@ -56,6 +75,8 @@ export default function GetQuotePage() {
 
       if (res.ok) {
         setSubmitted(true);
+        // Automatically open WhatsApp with lead details to 9045449196
+        openWhatsAppLead(waText);
       } else {
         const data = await res.json();
         setErrorMsg(data.message || 'Error submitting quote request.');
@@ -108,14 +129,25 @@ export default function GetQuotePage() {
                     Quotation Request Received!
                   </h4>
                   <p className="text-xs text-walnut/70 max-w-sm mx-auto leading-relaxed">
-                    Thank you, <strong className="text-walnut-dark">{formData.name}</strong>. Our chief estimating architect will compile your comprehensive Bill of Quantities (BOQ) and contact you at <strong className="text-walnut-dark">{formData.phone}</strong>.
+                    Thank you, <strong className="text-walnut-dark">{formData.name}</strong>. Your quotation brief has been submitted and dispatched to WhatsApp <strong className="text-gold">+{WHATSAPP_PHONE}</strong>. Our chief estimating architect will compile your comprehensive BOQ.
                   </p>
-                  <button
-                    onClick={() => setSubmitted(false)}
-                    className="mt-4 px-6 py-2.5 rounded-full bg-gold text-walnut-dark text-xs font-semibold uppercase tracking-wider hover:bg-luxury-400 transition-colors"
-                  >
-                    Submit Another Project
-                  </button>
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                    <a
+                      href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(lastWaText)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-green-600 hover:bg-green-500 text-white font-semibold text-xs tracking-wider uppercase flex items-center justify-center space-x-2 shadow-lg transition-colors"
+                    >
+                      <MessageCircle className="w-4 h-4 fill-white" />
+                      <span>Chat on WhatsApp ({DISPLAY_PHONE})</span>
+                    </a>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-gold text-walnut-dark text-xs font-semibold uppercase tracking-wider hover:bg-luxury-400 transition-colors"
+                    >
+                      Submit Another Project
+                    </button>
+                  </div>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-5">
@@ -222,7 +254,7 @@ export default function GetQuotePage() {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 90454 49196"
                         className="w-full bg-white border border-luxury-200 rounded-xl px-3 py-2 text-xs text-walnut-dark focus:outline-none focus:border-gold"
                       />
                     </div>

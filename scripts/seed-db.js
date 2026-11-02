@@ -52,7 +52,7 @@ async function seedDB() {
         google_maps_url, opening_hours, instagram_url, facebook_url, pinterest_url, linkedin_url, youtube_url
       ) VALUES (
         'S.M. Sanjna Interior Designer',
-        '+91 98100 87654',
+        '+91 90454 49196',
         '+91 11 4567 8900',
         'info@smsanjna.com',
         'concierge@smsanjna.com',

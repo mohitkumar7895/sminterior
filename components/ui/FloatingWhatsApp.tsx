@@ -15,7 +15,7 @@ export default function FloatingWhatsApp() {
     return null;
   }
 
-  const phone = '919810087654';
+  const phone = '919045449196';
   const defaultMsg = encodeURIComponent(
     'Hello S.M. Sanjna Interior Studio! I am exploring your website and would like to discuss an interior project / furniture inquiry.'
   );
@@ -71,7 +71,7 @@ export default function FloatingWhatsApp() {
               className="w-full py-1.5 px-3 rounded-xl border border-white/15 text-cream/80 hover:text-cream text-[11px] font-medium flex items-center justify-center space-x-1.5 transition-colors"
             >
               <Phone className="w-3 h-3 text-gold" />
-              <span>Call: +91 98100 87654</span>
+              <span>Call: +91 90454 49196</span>
             </a>
           </div>
         </div>

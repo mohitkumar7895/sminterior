@@ -2,8 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { CheckCircle2, Printer, ArrowRight, ShieldCheck, Truck, Package } from 'lucide-react';
+import { CheckCircle2, Printer, ArrowRight, ShieldCheck, Truck, Package, MessageCircle } from 'lucide-react';
 import { getOrderByNumber } from '@/models/order';
+import { getWhatsAppUrl, DISPLAY_PHONE } from '@/lib/whatsapp';
 import PrintInvoiceButton from './PrintInvoiceButton';
 
 interface Props {
@@ -46,7 +47,7 @@ export default async function OrderSuccessPage({ params }: Props) {
                 <span className="text-gold font-serif text-sm">| Atelier</span>
               </div>
               <p className="text-[11px] text-walnut/60">42 Heritage Grand Boulevard, South Extn. II, New Delhi</p>
-              <p className="text-[11px] text-walnut/60">Email: concierge@smsanjna.com | Tel: +91 98100 87654</p>
+              <p className="text-[11px] text-walnut/60">Email: concierge@smsanjna.com | Tel: +91 90454 49196</p>
             </div>
 
             <div className="text-left sm:text-right">
@@ -157,11 +158,29 @@ export default async function OrderSuccessPage({ params }: Props) {
 
         {/* Action Controls */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4">
-          <PrintInvoiceButton />
+          <div className="flex items-center space-x-3 w-full sm:w-auto">
+            <PrintInvoiceButton />
+            <a
+              href={getWhatsAppUrl(
+                `🛍️ *Order Confirmation Inquiry*\n\n` +
+                `*Order Number:* #${order.order_number}\n` +
+                `*Customer:* ${order.customer_name}\n` +
+                `*Total Amount:* ₹${Number(order.total_amount).toLocaleString('en-IN')}\n` +
+                `*Status:* ${order.order_status}\n\n` +
+                `Please confirm dispatch details for this order.`
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-3 rounded-full bg-emerald-700 hover:bg-emerald-800 text-white font-semibold text-xs tracking-wider uppercase transition-all shadow-md flex items-center space-x-2"
+            >
+              <MessageCircle className="w-4 h-4 fill-white" />
+              <span>WhatsApp Concierge ({DISPLAY_PHONE})</span>
+            </a>
+          </div>
 
           <Link
             href="/furniture"
-            className="px-8 py-3.5 rounded-full bg-walnut text-cream hover:bg-gold hover:text-walnut-dark font-semibold text-xs uppercase tracking-widest transition-all shadow-md flex items-center space-x-2"
+            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-walnut text-cream hover:bg-gold hover:text-walnut-dark font-semibold text-xs uppercase tracking-widest transition-all shadow-md flex items-center justify-center space-x-2"
           >
             <span>Continue to Atelier Shop</span>
             <ArrowRight className="w-4 h-4" />

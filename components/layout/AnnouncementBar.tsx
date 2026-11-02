@@ -12,7 +12,7 @@ interface AnnouncementBarProps {
 
 export default function AnnouncementBar({
   announcement = '✨ Complimentary 3D Spatial Consultation & ₹10,000 Voucher on Full-Home Turnkey Projects this Season',
-  phone = '+91 98100 87654',
+  phone = '+91 90454 49196',
   email = 'info@smsanjna.com'
 }: AnnouncementBarProps) {
   return (

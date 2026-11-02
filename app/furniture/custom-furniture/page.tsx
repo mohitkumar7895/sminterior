@@ -84,7 +84,7 @@ export default function CustomFurniturePage() {
                 Submit Custom Drawing
               </a>
               <a
-                href="https://wa.me/919810087654?text=Hi%20S.M.%20Sanjna%20Team,%20I%20am%20interested%20in%20a%20custom%20furniture%20piece"
+                href="https://wa.me/919045449196?text=Hi%20S.M.%20Sanjna%20Team,%20I%20am%20interested%20in%20a%20custom%20furniture%20piece"
                 target="_blank"
                 rel="noreferrer"
                 className="w-full sm:w-auto px-6 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-cream font-semibold text-xs uppercase tracking-widest transition-all text-center"

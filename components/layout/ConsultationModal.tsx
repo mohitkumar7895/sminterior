@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { X, Sparkles, CheckCircle2, Calendar, Phone, Mail, User, Home } from 'lucide-react';
+import { X, Sparkles, CheckCircle2, Calendar, Phone, Mail, User, Home, MessageCircle } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
+import { openWhatsAppLead, WHATSAPP_PHONE, DISPLAY_PHONE } from '@/lib/whatsapp';
 
 export default function ConsultationModal() {
   const { isConsultationModalOpen, closeConsultationModal, preselectedService } = useAuth();
@@ -22,6 +23,7 @@ export default function ConsultationModal() {
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
+  const [lastWaText, setLastWaText] = useState('');
 
   if (!isConsultationModalOpen) return null;
 
@@ -29,6 +31,22 @@ export default function ConsultationModal() {
     e.preventDefault();
     setSubmitting(true);
     setErrorMsg('');
+
+    const waText = `✨ *New 3D Design Consultation Request*
+
+👤 *Name:* ${formData.name}
+📞 *Phone / WhatsApp:* ${formData.phone}
+✉️ *Email:* ${formData.email || 'N/A'}
+🏡 *Property / Project:* ${formData.property_type || 'N/A'}
+💰 *Estimated Budget:* ${formData.estimated_budget || 'N/A'}
+📅 *Preferred Date:* ${formData.preferred_date || 'N/A'}
+⏰ *Preferred Time:* ${formData.preferred_time || 'N/A'}
+📝 *Client Notes:* ${formData.notes || 'None'}
+
+---
+*Studio:* S.M. Sanjna Interior Designer`;
+
+    setLastWaText(waText);
 
     try {
       const res = await fetch('/api/consultations', {
@@ -39,6 +57,8 @@ export default function ConsultationModal() {
 
       if (res.ok) {
         setSuccess(true);
+        // Automatically open WhatsApp with lead details to 9045449196
+        openWhatsAppLead(waText);
       } else {
         const err = await res.json();
         setErrorMsg(err.message || 'Something went wrong. Please check your information.');
@@ -89,17 +109,28 @@ export default function ConsultationModal() {
                 Consultation Requested!
               </h4>
               <p className="text-xs text-cream/70 max-w-sm mx-auto leading-relaxed">
-                Thank you, <strong className="text-gold">{formData.name}</strong>. Our lead spatial designer will contact you at <strong className="text-cream">{formData.phone}</strong> within 4 business hours to confirm your private atelier appointment.
+                Thank you, <strong className="text-gold">{formData.name}</strong>. Your consultation details have been recorded and dispatched to WhatsApp <strong className="text-gold">+{WHATSAPP_PHONE}</strong>. Our lead spatial designer will connect with you shortly.
               </p>
-              <button
-                onClick={() => {
-                  setSuccess(false);
-                  closeConsultationModal();
-                }}
-                className="mt-4 px-6 py-2.5 rounded-full bg-gold text-walnut-dark font-semibold text-xs tracking-wider uppercase hover:bg-luxury-400 transition-colors"
-              >
-                Done
-              </button>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
+                <a
+                  href={`https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent(lastWaText)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-green-600 hover:bg-green-500 text-white font-semibold text-xs tracking-wider uppercase flex items-center justify-center space-x-2 shadow-lg transition-colors"
+                >
+                  <MessageCircle className="w-4 h-4 fill-white" />
+                  <span>Chat on WhatsApp ({DISPLAY_PHONE})</span>
+                </a>
+                <button
+                  onClick={() => {
+                    setSuccess(false);
+                    closeConsultationModal();
+                  }}
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-gold text-walnut-dark font-semibold text-xs tracking-wider uppercase hover:bg-luxury-400 transition-colors"
+                >
+                  Done
+                </button>
+              </div>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -138,7 +169,7 @@ export default function ConsultationModal() {
                       required
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 90454 49196"
                       className="w-full bg-white/5 border border-white/10 rounded-xl pl-9 pr-3 py-2 text-xs text-cream focus:outline-none focus:border-gold transition-colors"
                     />
                   </div>

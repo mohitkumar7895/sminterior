@@ -384,11 +384,11 @@ export default function Navbar() {
             </button>
 
             <a
-              href="tel:+919810087654"
+              href="tel:+919045449196"
               className="w-full py-2.5 rounded-xl border border-white/20 text-cream text-center text-xs tracking-wide flex items-center justify-center space-x-2"
             >
               <Phone className="w-3.5 h-3.5 text-gold" />
-              <span>Call Concierge: +91 98100 87654</span>
+              <span>Call Concierge: +91 90454 49196</span>
             </a>
           </div>
         </div>

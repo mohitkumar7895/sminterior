@@ -15,7 +15,7 @@ export default function SettingsAdminClient({ initialSettings, initialContact }:
   const [settings, setSettings] = useState(initialSettings);
   const [contact, setContact] = useState<any>(initialContact || {
     company_name: 'S.M. Sanjna Interior Designer',
-    phone_primary: '+91 98100 87654',
+    phone_primary: '+91 90454 49196',
     phone_secondary: '+91 11 4567 8900',
     email_primary: 'info@smsanjna.com',
     email_support: 'concierge@smsanjna.com',

@@ -9,6 +9,7 @@ import {
   ArrowRight, CheckCircle2, ChevronRight
 } from 'lucide-react';
 import { useCart } from '@/context/CartContext';
+import { openWhatsAppLead } from '@/lib/whatsapp';
 
 export default function CheckoutPage() {
   const router = useRouter();
@@ -85,6 +86,19 @@ export default function CheckoutPage() {
 
       if (res.ok) {
         const data = await res.json();
+        // Dispatch order confirmation lead to WhatsApp 9045449196
+        const itemNames = items.map((i) => `${i.name} (Qty: ${i.quantity})`).join(', ');
+        const waMsg = `🛍️ *New Bespoke Furniture Order Received!*\n\n` +
+          `*Order Number:* #${data.order.order_number}\n` +
+          `*Customer Name:* ${formData.customer_name}\n` +
+          `*Phone:* ${formData.customer_phone}\n` +
+          `*Email:* ${formData.customer_email}\n` +
+          `*Shipping Address:* ${formData.shipping_address}, ${formData.city}, ${formData.state} - ${formData.postal_code}\n` +
+          `*Payment Method:* ${formData.payment_method === 'cod' ? 'Cash on Delivery (White-Glove)' : 'Online Payment'}\n` +
+          `*Total Order Value:* ₹${Number(total).toLocaleString('en-IN')}\n` +
+          `*Ordered Items:* ${itemNames}` +
+          (formData.notes ? `\n*Customer Notes:* ${formData.notes}` : '');
+        openWhatsAppLead(waMsg);
         clearCart();
         router.push(`/order-success/${data.order.order_number}`);
       } else {
@@ -156,7 +170,7 @@ export default function CheckoutPage() {
                       required
                       value={formData.customer_phone}
                       onChange={(e) => setFormData({ ...formData, customer_phone: e.target.value })}
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 90454 49196"
                       className="w-full bg-white border border-luxury-200 rounded-xl px-3.5 py-2.5 text-xs text-walnut-dark focus:outline-none focus:border-gold"
                     />
                   </div>

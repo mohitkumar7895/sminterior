@@ -10,7 +10,7 @@ export default function GetQuotePage() {
     name: '',
     email: '',
     phone: '',
-    project_type: 'Full Home Turnkey Interior',
+    project_type: 'Complete Full-Home Interior (Design to Handover)',
     area_sqft: 2000,
     budget_range: '₹20 Lakhs - ₹35 Lakhs',
     scope: ['Modular Kitchen', 'Wardrobes', 'False Ceiling & Lighting', 'Custom Furniture'],
@@ -33,7 +33,7 @@ export default function GetQuotePage() {
   };
 
   const calculateEstimate = () => {
-    // Basic rate benchmark: ₹1,500 - ₹2,500 per sq.ft. for turnkey luxury
+    // Basic rate benchmark: ₹1,500 - ₹2,500 per sq.ft. for complete home interior luxury
     const min = formData.area_sqft * 1600;
     const max = formData.area_sqft * 2600;
     return { min, max };
@@ -167,7 +167,7 @@ export default function GetQuotePage() {
                         onChange={(e) => setFormData({ ...formData, project_type: e.target.value })}
                         className="w-full bg-white border border-luxury-200 rounded-xl px-3.5 py-2.5 text-xs text-walnut-dark focus:outline-none focus:border-gold transition-colors"
                       >
-                        <option value="Full Home Turnkey Interior">Full Home Turnkey Interior</option>
+                        <option value="Complete Full-Home Interior (Design to Handover)">Complete Full-Home Interior (Design to Handover)</option>
                         <option value="Luxury Villa Renovation">Luxury Villa Renovation</option>
                         <option value="Modular Kitchen Design">Modular Kitchen Design</option>
                         <option value="Living Room & Dining">Living Room & Dining</option>
@@ -311,7 +311,7 @@ export default function GetQuotePage() {
               </div>
 
               <div className="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-2">
-                <span className="text-[11px] text-cream/60 block">Turnkey Architecture Range:</span>
+                <span className="text-[11px] text-cream/60 block">Estimated Complete Interior Range:</span>
                 <div className="font-serif text-2xl sm:text-3xl font-bold text-gold">
                   ₹{(estimate.min / 100000).toFixed(1)} Lakhs – ₹{(estimate.max / 100000).toFixed(1)} Lakhs
                 </div>
@@ -340,7 +340,7 @@ export default function GetQuotePage() {
               </div>
 
               <div className="p-4 rounded-xl bg-gold/10 border border-gold/30 text-xs text-gold">
-                💡 <strong>Early Booking Benefit:</strong> Full-home turnkey projects finalized this month receive a complimentary ₹10,000 decor voucher.
+                💡 <strong>Early Booking Benefit:</strong> Complete full-home interior projects finalized this month receive a complimentary ₹10,000 decor voucher.
               </div>
             </div>
           </div>

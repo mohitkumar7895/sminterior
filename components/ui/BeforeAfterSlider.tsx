@@ -16,7 +16,7 @@ export default function BeforeAfterSlider({
   beforeImage,
   afterImage,
   title,
-  category = 'Turnkey Transformation',
+  category = 'Full Home Transformation',
   description,
 }: BeforeAfterSliderProps) {
   const [sliderPosition, setSliderPosition] = useState(50);

@@ -23,7 +23,7 @@ export default function BeforeAfterSection({ projects }: BeforeAfterSectionProps
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           light
-          badge="Turnkey Metamorphosis"
+          badge="Full Space Transformation"
           title="Before & After Transformations"
           subtitle="Drag the interactive slider to experience the dramatic difference between bare concrete shells and finished architectural masterpieces."
         />

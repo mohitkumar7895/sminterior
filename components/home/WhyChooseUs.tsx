@@ -17,7 +17,7 @@ export default function WhyChooseUs() {
     {
       icon: Clock,
       title: 'Penalty-Backed On-Time Handover',
-      desc: 'We honor your schedule. Our turnkey residential deliveries include strict timeline milestones with financial penalty guarantees for any delay.',
+      desc: 'We honor your schedule. Our residential project deliveries include strict timeline milestones with financial penalty guarantees for any delay.',
     },
     {
       icon: Calculator,

@@ -12,7 +12,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return constructMetadata(
     '/about',
     'About Us | S.M. Sanjna Interior Designer Studio & Atelier',
-    'Discover our 15-year heritage in luxury architecture, turnkey residential transformations, and bespoke solid wood furniture craftsmanship.'
+    'Discover our 15-year heritage in luxury architecture, complete residential transformations, and bespoke solid wood furniture craftsmanship.'
   );
 }
 
@@ -23,7 +23,7 @@ export default async function AboutPage() {
 
   const values = [
     { title: 'Material Honesty', desc: 'We never fake solid timber with paper foil or cheap hollow MDF. Real Burma teak, Italian marble, and brass only.' },
-    { title: 'Turnkey Responsibility', desc: 'A single point of contact from initial 3D VR simulation to deep-cleaned move-in handover with zero finger-pointing.' },
+    { title: 'End-to-End Responsibility', desc: 'A single point of contact from initial 3D VR simulation to deep-cleaned move-in handover with zero finger-pointing.' },
     { title: 'Ergonomic Longevity', desc: 'Spaces engineered not just for photo shoots, but to nurture family rituals, restful sleep, and joyful culinary experiences.' },
     { title: 'Transparent Pricing', desc: 'Itemized, square-foot BOQs with clear hardware specifications and absolutely no surprise billings.' }
   ];
@@ -32,7 +32,7 @@ export default async function AboutPage() {
     { year: '2010', title: 'Studio Founded in New Delhi', desc: 'Started with bespoke joinery commissions for luxury farmhouses and South Delhi villas.' },
     { year: '2015', title: 'Atelier Manufacturing Facility Launched', desc: 'Opened our dedicated 25,000 sq.ft. timber seasoning and CNC joinery facility.' },
     { year: '2019', title: 'German Blum Gold Partnership', desc: 'Standardized all modular kitchens with lifetime-guaranteed European soft-motion hardware.' },
-    { year: '2023', title: '1,000th Turnkey Residence Delivered', desc: 'Celebrated the milestone handover of our 1,000th full-home architectural transformation.' },
+    { year: '2023', title: '1,000th Luxury Residence Delivered', desc: 'Celebrated the milestone handover of our 1,000th full-home architectural transformation.' },
     { year: '2025', title: 'Haute E-Commerce Collection Launch', desc: 'Enabling homeowners nationwide to order our bespoke furniture pieces with white-glove inside placement.' },
   ];
 
@@ -72,7 +72,7 @@ export default async function AboutPage() {
                 alignment="left"
                 badge="The Founder's Narrative"
                 title="A Passion for Living With Natural Materials"
-                subtitle="How an architect's love for fragrant timber resins and hand-carved stone grew into one of Delhi's most respected turnkey design houses."
+                subtitle="How an architect's love for fragrant timber resins and hand-carved stone grew into one of Delhi's most respected interior design houses."
               />
 
               <div className="text-sm text-walnut/80 space-y-4 font-light leading-relaxed">
@@ -136,7 +136,7 @@ export default async function AboutPage() {
             light
             badge="Chronology"
             title="Fifteen Years of Milestone Achievements"
-            subtitle="Tracing our journey from a small boutique carpentry studio to an industry benchmark in luxury turnkey interiors."
+            subtitle="Tracing our journey from a small boutique carpentry studio to an industry benchmark in luxury residential interiors."
           />
 
           <div className="space-y-6 pt-4">
@@ -167,7 +167,7 @@ export default async function AboutPage() {
             <SectionHeader
               badge="Client Inquiries"
               title="Frequently Asked Questions"
-              subtitle="Everything you need to know about our turnkey interior design timelines, materials, and custom furniture warranties."
+              subtitle="Everything you need to know about our interior design timelines, materials, and custom furniture warranties."
             />
 
             <div className="space-y-4">

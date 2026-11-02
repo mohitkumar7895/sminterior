@@ -26,7 +26,7 @@ export default function ProcessSection() {
     {
       step: '05',
       title: 'Dust-Free Handover & Celebration',
-      desc: 'Rapid on-site installation, 150-point quality audit, professional styling, and turnkey move-in celebration.',
+      desc: 'Rapid on-site installation, 150-point quality audit, professional styling, and celebratory move-in handover.',
     },
   ];
 
@@ -34,9 +34,9 @@ export default function ProcessSection() {
     <section className="py-20 lg:py-28 bg-cream">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
-          badge="Turnkey Methodology"
+          badge="End-to-End Methodology"
           title="Our Seamless Five-Step Journey"
-          subtitle="From your initial dream concept to champagne handover, our turnkey architecture process guarantees predictable elegance with zero stress."
+          subtitle="From your initial dream concept to champagne handover, our comprehensive interior process guarantees predictable elegance with zero stress."
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 relative">

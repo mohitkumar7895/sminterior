@@ -33,7 +33,7 @@ export default async function RootLayout({
     // Fallback if db is temporarily unreachable
   }
 
-  const announcement = settings.hero_announcement || '✨ Complimentary 3D Spatial Consultation & ₹10,000 Voucher on Full-Home Turnkey Projects this Season';
+  const announcement = settings.hero_announcement || '✨ Complimentary 3D Spatial Consultation & ₹10,000 Voucher on Complete Full-Home Interiors this Season';
   const phone = settings.contact_phone || '+91 90454 49196';
   const email = settings.contact_email || 'info@smsanjna.com';
   const localBusinessSchema = generateLocalBusinessSchema();

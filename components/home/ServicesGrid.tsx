@@ -49,8 +49,8 @@ export default function ServicesGrid({ services }: ServicesGridProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           badge="Bespoke Offerings"
-          title="Turnkey Interior Design & Architectural Services"
-          subtitle="From concept drawings and 3D photorealistic visualization to turnkey execution and bespoke furniture manufacturing, explore our comprehensive suite of 14 architectural interior services."
+          title="End-to-End Interior Design & Architectural Services"
+          subtitle="From concept drawings and 3D photorealistic visualization to factory-precision manufacturing and move-in ready handover, explore our comprehensive suite of 14 architectural interior services."
         />
 
         {/* Category Tabs */}

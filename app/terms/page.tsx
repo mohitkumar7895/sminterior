@@ -25,7 +25,7 @@ export default function TermsPage() {
             Welcome to <strong>S.M. Sanjna Interior Designer</strong>. By commissioning our architectural services or purchasing furniture through our online portal, you agree to the following terms of engagement.
           </p>
 
-          <h3 className="font-serif text-lg font-bold text-walnut-dark pt-2">1. Turnkey Interior Execution &amp; BOQ</h3>
+          <h3 className="font-serif text-lg font-bold text-walnut-dark pt-2">1. Complete Interior Execution &amp; BOQ</h3>
           <p>
             All architectural and interior fit-out projects are governed by our finalized, signed Bill of Quantities (BOQ). Scope alterations requested after drawing approvals will be itemized via mutual change orders with transparent rates.
           </p>

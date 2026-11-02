@@ -83,7 +83,7 @@ async function seedDB() {
       ('tax_percentage', '18', 'ecommerce', 'Standard GST percentage for furniture'),
       ('razorpay_key_id', 'rzp_test_placeholder_key', 'payment', 'Razorpay Public Key ID'),
       ('razorpay_key_secret', 'rzp_test_placeholder_secret', 'payment', 'Razorpay Key Secret'),
-      ('hero_announcement', '✨ Complimentary 3D Spatial Consultation & ₹10,000 Voucher on Full-Home Turnkey Projects this Season', 'announcement', 'Announcement Bar text');
+      ('hero_announcement', '✨ Complimentary 3D Spatial Consultation & ₹10,000 Voucher on Complete Full-Home Interiors this Season', 'announcement', 'Announcement Bar text');
     `);
 
     console.log('3. Seeding Categories & Subcategories...');
@@ -195,7 +195,7 @@ async function seedDB() {
       {
         name: 'The Milano Gourmet Quartz Island Kitchen',
         slug: 'milano-gourmet-quartz-island-kitchen',
-        short_description: 'Custom turnkey modular kitchen with Italian Calacatta gold quartz waterfall counters and anti-fingerprint acrylic cabinetry.',
+        short_description: 'Custom luxury modular kitchen with Italian Calacatta gold quartz waterfall counters and anti-fingerprint acrylic cabinetry.',
         description: 'The pinnacle of culinary architecture. Designed with a seamless handle-free Gola profile, soft-closing Blumotion hardware, integrated pull-out pantries, spice organizers, and acoustic noise-dampened under-mount Franke sink. Configured with bespoke cabinet internals tailored to Indian gourmet cooking with heavy-load tandem drawers and moisture-resistant Marine Grade BWP ply core.',
         category_slug: 'modular-kitchens',
         base_price: 450000,
@@ -207,7 +207,7 @@ async function seedDB() {
         material: 'IS:710 Marine Grade BWP Plywood, Anti-Fingerprint Thermal Laminate & Acrylic, 20mm Calacatta Quartz',
         finish: 'Cashmere Grey & Fluted Natural Walnut with Gold Accents',
         warranty: '10-Year Water-Resistance & Lifetime Hardware Warranty',
-        delivery_time: '25-30 Business Days (Turnkey Installed)',
+        delivery_time: '25-30 Business Days (Fully Installed & Ready)',
         care_instructions: 'Clean surfaces with mild soapy water and microfiber cloth. Quartz counters are heat resistant up to 180°C.',
         tags: 'modular kitchen, island kitchen, luxury kitchen, quartz, blum, featured',
         images: [
@@ -521,8 +521,8 @@ async function seedDB() {
       {
         name: 'Complete Home Interior Design',
         slug: 'complete-home-interior-design',
-        short_description: 'End-to-end turnkey architectural interiors designed, bespoke manufactured, and handed over to perfection.',
-        full_description: 'Experience the pinnacle of full-residence transformation. From structural spatial re-planning, 3D photorealistic architectural renders, custom joinery, electrical & mood lighting schemes to soft furnishing curation. Our studio oversees every single detail with dedicated project managers, ensuring zero stress and turnkey handover within guaranteed timelines.',
+        short_description: 'Complete end-to-end architectural interiors designed, bespoke manufactured, and handed over ready to live.',
+        full_description: 'Experience the pinnacle of full-residence transformation. From structural spatial re-planning, 3D photorealistic architectural renders, custom joinery, electrical & mood lighting schemes to soft furnishing curation. Our studio oversees every single detail with dedicated project managers, ensuring zero stress and flawless move-in handover within guaranteed timelines.',
         icon: 'Home',
         hero_image: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80',
         starting_price: 750000,
@@ -539,7 +539,7 @@ async function seedDB() {
           { step: '01', title: 'Consultation & Site Laser Measurement', desc: 'Understanding your lifestyle, aesthetic preference, budget, and architectural mapping.' },
           { step: '02', title: '3D Spatial Concepts & Mood Boards', desc: 'Presenting photorealistic 3D renders, material palettes, and lighting design schemes.' },
           { step: '03', title: 'Precision Joinery & Factory Fabrication', desc: 'Manufacturing high-grade German hardware cabinetry in our precision facility.' },
-          { step: '04', title: 'Site Execution & Turnkey Handover', desc: 'Dust-free assembly, quality inspection checklist, and celebration handover.' }
+          { step: '04', title: 'Site Execution & Move-in Ready Handover', desc: 'Dust-free assembly, quality inspection checklist, and celebration handover.' }
         ])
       },
       {
@@ -649,7 +649,7 @@ async function seedDB() {
           { step: '01', title: 'Capacity & Workflow Planning', desc: 'Mapping departmental adjacencies, collaboration zones, and quiet zones.' },
           { step: '02', title: '3D Floor Plan & Infrastructure Design', desc: 'Integrating high-speed data cabling, HVAC diffusers, and emergency exits.' },
           { step: '03', title: 'Rapid Offsite Modular Production', desc: 'Speedy assembly minimizing business downtime.' },
-          { step: '04', title: 'Testing & Handover', desc: 'Complete IT testing and turnkey office walkthrough.' }
+          { step: '04', title: 'Testing & Handover', desc: 'Complete IT testing and ready office walkthrough.' }
         ])
       },
       {
@@ -963,7 +963,7 @@ async function seedDB() {
         project: 'Double-Height Penthouse Interior',
         rating: 5,
         avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80',
-        comment: 'The level of sophistication and European refinement S.M. Sanjna brought to our DLF Magnolias residence is breathtaking. Their turnkey project management meant we literally handed over keys and walked into paradise.'
+        comment: 'The level of sophistication and European refinement S.M. Sanjna brought to our DLF Magnolias residence is breathtaking. Their complete project management meant we literally handed over keys and walked into paradise.'
       },
       {
         name: 'Rhea Kapadia',
@@ -1083,7 +1083,7 @@ async function seedDB() {
         'Design My Kitchen',
         '/get-quote',
         'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1920&q=85',
-        'Turnkey Culinary Architecture',
+        'Complete Modular Kitchen Sanctuary',
         3,
         1
       );
@@ -1092,14 +1092,14 @@ async function seedDB() {
     console.log('10. Seeding Homepage Sections...');
     const sections = [
       { key: 'hero', title: 'Cinematic Hero Banner', subtitle: 'Primary entrance slider with high-impact visuals' },
-      { key: 'about_preview', title: 'The S.M. Sanjna Atelier Story', subtitle: 'Fifteen years of artisanal excellence and turnkey craftsmanship' },
+      { key: 'about_preview', title: 'The S.M. Sanjna Atelier Story', subtitle: 'Fifteen years of artisanal excellence and fine wood craftsmanship' },
       { key: 'services_showcase', title: 'Our Interior Design Services', subtitle: 'Comprehensive spatial planning from residential to luxury commercial' },
       { key: 'featured_furniture', title: 'Curated Furniture Showcase', subtitle: 'Handcrafted masterpieces for discerning residences' },
       { key: 'wooden_furniture', title: 'Solid Burma Teakwood Collection', subtitle: 'Time-honored hand joinery and fragrant natural resins' },
       { key: 'modular_kitchens', title: 'Modular Kitchen Innovations', subtitle: 'Where high gastronomy meets architectural ergonomics' },
       { key: 'portfolio_highlights', title: 'Flagship Interior Projects', subtitle: 'Take a virtual tour through our recently completed residences' },
       { key: 'before_after', title: 'Before & After Transformations', subtitle: 'Witness how thoughtful spatial design elevates daily living' },
-      { key: 'working_process', title: 'Our Seamless Five-Step Method', subtitle: 'From initial consultation to white-glove turnkey handover' },
+      { key: 'working_process', title: 'Our Seamless Five-Step Method', subtitle: 'From initial consultation to white-glove move-in handover' },
       { key: 'why_choose_us', title: 'The Sanjna Distinct Advantage', subtitle: 'Why elite homeowners trust our studio implicitly' },
       { key: 'testimonials', title: 'Words From Our Discerning Patrons', subtitle: 'Real reviews from verified villa and penthouse owners' },
       { key: 'blog_insights', title: 'The Design Editorial Journal', subtitle: 'Insights on architecture, materials, and luxury styling' },
@@ -1118,8 +1118,8 @@ async function seedDB() {
     const faqs = [
       {
         category: 'Interior Design',
-        q: 'How does the turnkey interior design process work at S.M. Sanjna?',
-        a: 'Our turnkey service covers every stage from initial site laser measurement, 3D architectural renders, false ceilings, electrical rewiring, custom joinery fabrication in our factory, to final decor placement. You have a single dedicated project engineer with weekly progress reviews.'
+        q: 'How does the complete interior design process work at S.M. Sanjna?',
+        a: 'Our complete end-to-end service covers every stage from initial site laser measurement, 3D architectural renders, false ceilings, electrical rewiring, custom joinery fabrication in our factory, to final decor placement and move-in handover. You have a single dedicated project engineer with weekly progress reviews.'
       },
       {
         category: 'Modular Kitchens',
@@ -1154,8 +1154,8 @@ async function seedDB() {
     console.log('12. Seeding SEO Metadata for All 27 Core Pages...');
     const seoPages = [
       { route: '/', title: 'S.M. Sanjna Interior Designer | Luxury Interiors & Handcrafted Furniture', desc: 'Transform your space into something extraordinary. Premium interior design studio and luxury furniture maker in Delhi NCR. Book a free consultation.', h1: 'Transform Your Space Into Something Extraordinary' },
-      { route: '/about', title: 'About Us | S.M. Sanjna Interior Designer Studio & Atelier', desc: 'Discover our 15-year heritage in luxury architecture, turnkey residential transformations, and bespoke solid wood furniture craftsmanship.', h1: 'Crafting Haute Spaces & Timeless Furniture' },
-      { route: '/services', title: 'Interior Design Services | Turnkey Residential & Commercial', desc: 'Explore full home interiors, modular kitchens, luxury bedrooms, office fit-outs, and bespoke joinery with 10-year warranty.', h1: 'Our Bespoke Interior Design Services' },
+      { route: '/about', title: 'About Us | S.M. Sanjna Interior Designer Studio & Atelier', desc: 'Discover our 15-year heritage in luxury architecture, complete residential transformations, and bespoke solid wood furniture craftsmanship.', h1: 'Crafting Haute Spaces & Timeless Furniture' },
+      { route: '/services', title: 'Interior Design Services | Residential & Commercial Excellence', desc: 'Explore full home interiors, modular kitchens, luxury bedrooms, office fit-outs, and bespoke joinery with 10-year warranty.', h1: 'Our Bespoke Interior Design Services' },
       { route: '/services/residential-interior-design', title: 'Residential Interior Design | S.M. Sanjna Interior Designer', desc: 'Warm, timeless, and functional home interiors crafted for modern living and family comfort.', h1: 'Residential Interior Architecture' },
       { route: '/services/commercial-interior-design', title: 'Commercial & Retail Interior Design | S.M. Sanjna Interior Designer', desc: 'High-impact retail showrooms, fine dining hospitality, and executive corporate interiors.', h1: 'Commercial & Retail Interior Architecture' },
       { route: '/services/modular-kitchen', title: 'Luxury Modular Kitchen Design | S.M. Sanjna Interior Designer', desc: 'German Blum hardware, marine grade BWP ply, and Italian quartz islands designed for gourmet living.', h1: 'Modular Kitchen Sanctuary' },

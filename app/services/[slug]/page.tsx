@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   return constructMetadata(
     `/services/${params.slug}`,
     `${service.name} | S.M. Sanjna Interior Designer`,
-    service.short_description || 'Turnkey interior design and architectural bespoke execution in Delhi NCR.'
+    service.short_description || 'End-to-end interior design and architectural bespoke execution in Delhi NCR.'
   );
 }
 
@@ -211,7 +211,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   </div>
                   <div className="flex justify-between py-1">
                     <span className="text-cream/60">Execution</span>
-                    <span className="font-bold text-cream">Turnkey In-House</span>
+                    <span className="font-bold text-cream">100% In-House Atelier</span>
                   </div>
                 </div>
 

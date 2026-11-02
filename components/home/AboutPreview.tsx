@@ -29,7 +29,7 @@ export default function AboutPreview() {
     },
     {
       icon: Award,
-      title: 'Turnkey Guaranteed Handover',
+      title: 'Move-in Ready Handover',
       desc: 'Transparent itemized BOQ pricing with dedicated on-site project management.',
     },
   ];

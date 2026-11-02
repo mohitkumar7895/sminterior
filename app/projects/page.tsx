@@ -35,7 +35,7 @@ export default async function ProjectsPage({ searchParams }: Props) {
             Our Interior Architecture Portfolio
           </h1>
           <p className="text-sm sm:text-base text-cream/80 max-w-2xl mx-auto font-light leading-relaxed">
-            A testament to 15 years of uncompromising design integrity, fine craftsmanship, and turnkey delivery.
+            A testament to 15 years of uncompromising design integrity, fine craftsmanship, and flawless handover.
           </p>
         </div>
       </section>

@@ -32,7 +32,7 @@ export default function PrivacyPolicyPage() {
 
           <h3 className="font-serif text-lg font-bold text-walnut-dark pt-2">2. How We Utilize Your Data</h3>
           <p>
-            Your information is strictly utilized to facilitate turnkey interior design deliverables, dispatch white-glove furniture deliveries, verify architectural laser scans, and communicate project milestones. We never sell, lease, or monetize your personal information to third parties.
+            Your information is strictly utilized to facilitate complete interior design deliverables, dispatch white-glove furniture deliveries, verify architectural laser scans, and communicate project milestones. We never sell, lease, or monetize your personal information to third parties.
           </p>
 
           <h3 className="font-serif text-lg font-bold text-walnut-dark pt-2">3. Payment &amp; Security</h3>

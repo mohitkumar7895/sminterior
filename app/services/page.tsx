@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return constructMetadata(
     '/services',
     'Interior Design Services | S.M. Sanjna Interior Designer',
-    'Comprehensive turnkey architectural interior design services for residential villas, modular kitchens, luxury bedrooms, corporate offices, and bespoke joinery.'
+    'Comprehensive end-to-end architectural interior design services for residential villas, modular kitchens, luxury bedrooms, corporate offices, and bespoke joinery.'
   );
 }
 
@@ -31,7 +31,7 @@ export default async function ServicesPage() {
             Our Interior Design Services
           </h1>
           <p className="text-sm sm:text-base text-cream/80 max-w-2xl mx-auto font-light leading-relaxed">
-            From initial spatial discovery and 3D architectural renders to factory-milled joinery and turnkey handover. Explore our 14 specialized interior services.
+            From initial spatial discovery and 3D architectural renders to factory-milled joinery and complete move-in ready handover. Explore our 14 specialized interior services.
           </p>
         </div>
       </section>

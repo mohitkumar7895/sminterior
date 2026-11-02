@@ -164,7 +164,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </div>
                 <div className="flex justify-between py-1">
                   <span className="text-walnut/60">Execution</span>
-                  <span className="font-semibold text-walnut-dark">Full Turnkey Atelier</span>
+                  <span className="font-semibold text-walnut-dark">Complete In-House Atelier</span>
                 </div>
               </div>
 

@@ -55,7 +55,7 @@ const defaultBanners: BannerItem[] = [
     secondary_cta_text: 'Design My Kitchen',
     secondary_cta_link: '/get-quote',
     background_image: 'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1920&q=85',
-    badge_text: 'Turnkey Culinary Architecture',
+    badge_text: 'Complete Modular Kitchen Sanctuary',
   },
 ];
 

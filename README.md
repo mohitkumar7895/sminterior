@@ -21,7 +21,7 @@ The platform combines an editorial interior design showcase with an enterprise f
   - Product details with multiple high-res imagery, thumbnail gallery, interactive zoom, material/color/size variant selection with live price adjustment.
   - Cart with localStorage persistence, free white-glove delivery progress bar (threshold ₹25,000), promotional coupon verification (`WELCOME10`, `LUXURY5000`, `FESTIVE15`), 18% standard GST calculation, and cash-on-delivery or encrypted online checkout.
   - Instant order creation in MySQL and printable official tax invoice view.
-- **14 Turnkey Interior Design Services**:
+- **14 End-to-End Interior Design Services**:
   1. Complete Home Interior Design
   2. Luxury Interior Design
   3. Modular Kitchen Design

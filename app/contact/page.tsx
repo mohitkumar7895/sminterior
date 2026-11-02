@@ -11,7 +11,7 @@ export default function ContactPage() {
     email: '',
     phone: '',
     subject: '',
-    service_interested: 'Full Home Turnkey Interior',
+    service_interested: 'Complete Home Interior (End-to-End)',
     message: '',
   });
 
@@ -253,7 +253,7 @@ export default function ContactPage() {
                         onChange={(e) => setFormData({ ...formData, service_interested: e.target.value })}
                         className="w-full bg-white border border-luxury-200 rounded-xl px-3.5 py-2.5 text-xs text-walnut-dark focus:outline-none focus:border-gold transition-colors"
                       >
-                        <option value="Full Home Turnkey Interior">Full Home Turnkey Interior</option>
+                        <option value="Complete Home Interior (End-to-End)">Complete Home Interior (End-to-End Design &amp; Execution)</option>
                         <option value="Luxury Villa Design">Luxury Villa Design</option>
                         <option value="Modular Kitchen Design">Modular Kitchen Design</option>
                         <option value="Living Room Architecture">Living Room Architecture</option>
